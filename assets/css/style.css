@@ -1,50 +1,200 @@
 * {
-    padding: 0 !important;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'PT Sans', sans-serif;
 }
 
-.grid-container {
+.main-container {
     display: grid;
-    grid-auto-rows: minmax(50px, auto);
-    background: red;
+    grid-template-areas: 
+    "nav nav"
+    "aside main"
+    "footer footer";
+    grid-template-rows: 0.7fr 8fr 0.5fr;
+    grid-template-columns: 1.5fr 8fr;
     height: 100vh;
-    padding: 15px;
-    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #006A89;
+    text-decoration: underline;
+}
+
+nav {
+    background: #1c1c1c;
+    color: #FFFF;
+    grid-area: nav;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+}
+
+nav a {
+    color: #FFFF;
+}
+
+.menu ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    padding: 0 10px;
+    list-style: none;
+    gap: 8px;
+}
+
+.menu ul li {
+    padding: 10px;
+}
+
+aside {
+    grid-area: aside;
+    text-align: center;
+}
+
+menu {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    height: 100%;
+}
+
+menu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    list-style: none;
+    padding: 10px 25px;
+    gap: 12px;
+}
+
+menu a {
+    color: #1c1c1c;
+}
+
+menu p {
+    color: grey;
+}
+
+.category {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
 }
 
 main {
-    grid-column: 4 / 13;
-    grid-row: 2 / 12;
-    background: gray;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-}
-
-.card_container {
-    display: flex;
-  flex-direction: column;
-    background-color: blue;
-}
-
-.card_header {
-min-height: 30px;
-}
-
-.card_body {
-    min-height: 120px;
-}
-
-&:hover {
- background-color: chocolate;
-}
-
-.card_footer {
-    min-height: 30px;
+    grid-area: main;
 }
 
 footer {
-           grid-column: 1 / 13;
-           background-color: yellowgreen;
+    grid-area: footer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: .5px solid #1c1c1c;
+}
+
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 20px;
+    column-gap: 25px;
+    row-gap: 40px;
+    overflow-y: scroll;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    overflow: hidden;
+    height: 350px;
+    text-align: center;
+    box-shadow: 5px 3px 7px 2px rgba(0, 0, 0, 0.2);
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.bg {
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 70%;
+}
+
+.product-btn {
+    width: 100%;
+}
+
+.product-btn button {
+    border: 1.5px solid #1c1c1c;
+    border-bottom-left-radius: 15px;
+    background-color: transparent;
+    width: 100%;
+    height: 35px;
+    cursor: pointer;
+}
+
+.product-btn button:hover {
+    color: #FFFF;
+    border: none;
+    background-color: #006A89;
+}
+
+.product-btn button:active {
+    transform: scale(0.99);
+}
+
+.product-img-1 {
+    background-image: url(../img/descarga\ \(1\).jpg);
+}
+
+.product-img-2 {
+    background-image: url(../img/imagen4.jpg);
+}
+
+.product-img-3 {
+    background-image: url(../img/imagen\ 2.jpg);
+}
+
+.product-img-4 {
+    background-image: url(../img/imagen\ 5.jpg);
+}
+
+.product-img-5 {
+    background-image: url(../img/descargar.jpeg);
+}
+
+.product-img-6 {
+    background-image: url(../img/descargar\ \(1\).jpeg);
+}
+
+.product-img-7 {
+    background-image: url(../img/descargar\ \(2\).jpeg);
+}
+
+.product-img-8 {
+    background-image: url(../img/MINICONSOLARETRO-03.jpg);
+}
+
+.product-img-9 {
+    background-image: url(../img/images.jpeg);
+}
+
+.product-img-10 {
+    background-image: url(../img/d1a28df0-ce45-11ed-879b-d0c0f4a3dffa.jpeg);
+}
+
+.product-img-11 {
+    background-image: url(../img/image_2022-05-02_135823329.png);
 }
